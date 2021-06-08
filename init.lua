@@ -10,11 +10,13 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "more_fuels:gasoline",
 	recipe = {
-			{"group:oil", "group:oil", "group:oil"},
-			{"group:oil", "group:biofuel", "group:oil"},
-			{"group:oil", "group:oil", "group:oil"}
+			{"more_fuels:refined_oil", "more_fuels:refined_oil", "more_fuels:refined_oil"},
+			{"more_fuels:refined_oil", "group:biofuel", "more_fuels:refined_oil"},
+			{"more_fuels:refined_oil", "more_fuels:refined_oil", "more_fuels:refined_oil"}
 		 }
 })
+local has_bucket = minetest.get_modpath("bucket")
+
 local function set_can_wear(itemstack, level, max_level)
 	local temp
 	if level == 0 then
@@ -43,6 +45,8 @@ function register_can(d)
 		wear_represents = "content_level",
 		liquids_pointable = true,
 		on_use = function(itemstack, user, pointed_thing)
+			minetest.chat_send_all(has_bucket)
+
 			if pointed_thing.type ~= "node" then return end
 			local node = minetest.get_node(pointed_thing.under)
 			if node.name ~= data.liquid_source_name then return end
@@ -176,6 +180,7 @@ minetest.register_node("more_fuels:petrolium_flowing", {
 	diggable = false,
 	buildable_to = true,
 	is_ground_content = false,
+	liquid_renewable = false,
 	drop = "",
 	drowning = 1,
 	liquidtype = "flowing",
@@ -192,4 +197,32 @@ register_can({
 	can_capacity = 16,
 	liquid_source_name = "more_fuels:petrolium_src",
 	liquid_flowing_name = "more_fuels:petrolium_flowing",
+})
+
+if rawget(_G, "bucket") and bucket.register_liquid then
+	bucket.register_liquid(
+		"more_fuels:petrolium_src",
+		"more_fuels:petrolium_flowing",
+		"more_fuels:bucket_oil",
+		"bucket_oil.png",
+		"Petroleum Bucket"
+	)
+end
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "more_fuels:bucket_oil",
+	burntime = 300,
+	replacements = {{"more_fuels:bucket_oil", "bucket:bucket_empty"}},
+})
+minetest.register_craft({
+	type = "cooking",
+	recipe = "more_fuels:bucket_oil",
+	output = "more_fuels:refined_oil",
+	cooktime = 60,
+})
+minetest.register_craftitem("more_fuels:refined_oil", {
+	description = "Refined Petroleum",
+	inventory_image = "bucket_oil_refined.png",
+	stack_max = 1,
 })
