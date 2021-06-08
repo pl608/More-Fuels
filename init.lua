@@ -15,7 +15,24 @@ minetest.register_craft({
 			{"group:oil", "group:oil", "group:oil"}
 		 }
 })
-
+local function set_can_wear(itemstack, level, max_level)
+	local temp
+	if level == 0 then
+		temp = 0
+	else
+		temp = 65536 - math.floor(level / max_level * 65535)
+		if temp > 65535 then temp = 65535 end
+		if temp < 1 then temp = 1 end
+	end
+	itemstack:set_wear(temp)
+end
+local function get_can_level(itemstack)
+	if itemstack:get_metadata() == "" then
+		return 0
+	else
+		return tonumber(itemstack:get_metadata())
+	end
+end
 function register_can(d)
 	local data = {}
 	for k, v in pairs(d) do data[k] = v end
@@ -170,7 +187,7 @@ minetest.register_node("more_fuels:petrolium_flowing", {
 })
 register_can({
 	can_name = "more_fuels:oil_can",
-	can_description = "Water Can",
+	can_description = "Petrolium Can",
 	can_inventory_image = "oil_can.png",
 	can_capacity = 16,
 	liquid_source_name = "more_fuels:petrolium_src",
