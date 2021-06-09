@@ -8,5 +8,8 @@ This mod adds a few new fuels for use in furnaces and such.
 ## WIP Fuels
 * diesel
 * propane
+## Ideas Added
+* petroleum is made to be like an ore with a scarcity similare to that of gold
 ## WIP Ideas
 * compatiblity with hidroplane, helecopter, motorboat and nautilis mods
+

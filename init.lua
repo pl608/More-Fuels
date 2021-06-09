@@ -257,3 +257,13 @@ minetest.register_craft({
 	output = "more_fuels:gasoline_cans",
 	recipe = {"more_fuels:gasoline","more_fuels:gasoline", "more_fuels:gasoline"}
 })
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "more_fuels:petrolium_src",
+	wherein        = "default:stone",
+	clust_scarcity = 13 * 13 * 13,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_max          = 31000,
+	y_min          = 1025,
+})
