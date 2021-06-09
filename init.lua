@@ -257,13 +257,23 @@ minetest.register_craft({
 	output = "more_fuels:gasoline_cans",
 	recipe = {"more_fuels:gasoline","more_fuels:gasoline", "more_fuels:gasoline"}
 })
+minetest.register_node("more_fuels:oil_saturated_stone", {
+	tiles = {"default_stone.png^[colorize:black:200"},
+	is_ground_content = true,
+	groups = {crumbly = 3, oil = 3},
+	drop = "more_fuels:oil_saturated_stone"
+})
 minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "more_fuels:petrolium_src",
-	wherein        = "default:stone",
+	ore_type       = "puff",
+	ore            = "more_fuels:oil_saturated_stone",
 	clust_scarcity = 13 * 13 * 13,
 	clust_num_ores = 5,
 	clust_size     = 3,
 	y_max          = 31000,
 	y_min          = 1025,
+})
+minetest.register_craft({
+	type = "shapeless",
+	recipe = {"more_fuels:oil_saturated_stone", "hammermod:steel_hammer", "bucket:bucket_empty"},
+	output = {"more_fuels:bucket_oil", "hammermod:steel_hammer"}
 })
