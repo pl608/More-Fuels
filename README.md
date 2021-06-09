@@ -7,3 +7,6 @@ This mod adds a few new fuels for use in furnaces and such.
 * oil/pertrolium
 ## WIP Fuels
 * diesel
+* propane
+## WIP Ideas
+* compatiblity with hidroplane, helecopter, motorboat and nautilis mods
