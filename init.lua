@@ -226,3 +226,34 @@ minetest.register_craftitem("more_fuels:refined_oil", {
 	inventory_image = "bucket_oil_refined.png",
 	stack_max = 1,
 })
+--minetest.register_node("more_fuels:propane", {
+	--description = "Propane Tank",
+	--drawtype = "mesh",
+	--tiles = {
+		--"propane_texture.png",
+	--},
+	--mesh = "propane_tank.obj",
+	--groups = {cracky = 3},
+--})
+minetest.register_node("more_fuels:gasoline_cans", {
+	drawtype = "mesh",
+	description = "Gas Cans (non flamable)",
+	tiles = {
+		"tank.png",
+		"tank_base.png"
+	},
+	mesh = "tank.obj",
+	groups = {
+		cracky = 3
+	},
+})
+minetest.register_craft({
+	type = "shapeless",
+	output = "more_fuels:gasoline 3",
+	recipe = {"more_fuels:gasoline_cans"}
+})
+minetest.register_craft({
+	type = "shapeless",
+	output = "more_fuels:gasoline_cans",
+	recipe = {"more_fuels:gasoline","more_fuels:gasoline", "more_fuels:gasoline"}
+})
