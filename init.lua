@@ -275,5 +275,6 @@ minetest.register_ore({
 minetest.register_craft({
 	type = "shapeless",
 	recipe = {"more_fuels:oil_saturated_stone", "hammermod:steel_hammer", "bucket:bucket_empty"},
-	output = {"more_fuels:bucket_oil", "hammermod:steel_hammer"}
+	output = "more_fuels:bucket_oil",
+	replacements = {{"hammermod:steel_hammer", "hammermod:steel_hammer"}}
 })
