@@ -16,7 +16,8 @@ minetest.register_craft({
 		 }
 })
 local has_bucket = minetest.get_modpath("bucket")
-
+local has_technic = minetest.get_modpath("technic")
+if has_technic then
 local function set_can_wear(itemstack, level, max_level)
 	local temp
 	if level == 0 then
@@ -98,8 +99,15 @@ function register_can(d)
 		end,
 	})
 end
-
-
+register_can({
+	can_name = "more_fuels:oil_can",
+	can_description = "Petrolium Can",
+	can_inventory_image = "oil_can.png",
+	can_capacity = 16,
+	liquid_source_name = "more_fuels:petrolium_src",
+	liquid_flowing_name = "more_fuels:petrolium_flowing",
+})
+end
 
 minetest.register_node("more_fuels:petrolium_src", {
 	description = "Petrolium Source",
@@ -190,14 +198,6 @@ minetest.register_node("more_fuels:petrolium_flowing", {
 	post_effect_color = {a = 103, r = 30, g = 60, b = 90},
 	groups = {oil = 3, liquid = 3, not_in_creative_inventory = 1},
 })
-register_can({
-	can_name = "more_fuels:oil_can",
-	can_description = "Petrolium Can",
-	can_inventory_image = "oil_can.png",
-	can_capacity = 16,
-	liquid_source_name = "more_fuels:petrolium_src",
-	liquid_flowing_name = "more_fuels:petrolium_flowing",
-})
 
 if rawget(_G, "bucket") and bucket.register_liquid then
 	bucket.register_liquid(
@@ -276,5 +276,9 @@ minetest.register_craft({
 	type = "shapeless",
 	recipe = {"more_fuels:oil_saturated_stone", "hammermod:steel_hammer", "bucket:bucket_empty"},
 	output = "more_fuels:bucket_oil",
-	replacements = {{"hammermod:steel_hammer", "hammermod:steel_hammer"}}
+	replacements = {{"hammermod:steel_hammer", "hammermod:steel_hammer"},{"more_fuels:oil_saturated_stone", "default:gravel"}}
+})
+minetest.register_craftitem(":biofuel:fuel_can", {
+	description = "Bio Diesel",
+	inventory_image = "Deisel.png"
 })
