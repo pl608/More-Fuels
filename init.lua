@@ -291,4 +291,4 @@ local function register_support(name, namestring)
 end 
 local test = "a"
 if minetest.get_modpath("hidroplane") then test = "b" end
-dofile(minetest.get_modpath("more_fuels") .. DIR_DELIM .. "add_apercy_sup.lua")
+dofile(minetest.get_modpath("more_fuels") .. DIR_DELIM .. "add_apercy_sup.lua") 
