@@ -208,7 +208,9 @@ if rawget(_G, "bucket") and bucket.register_liquid then
 		"Petroleum Bucket"
 	)
 end
-
+if rawget(_G, "trike") and trike.fuel then
+	trike.fuel = {['biofuel:biofuel'] = 1,['biofuel:bottle_fuel'] = 1,['biofuel:phial_fuel'] = 0.25, ['biofuel:fuel_can'] = 10, ["more_fuels:gasoline"] = 10}
+end
 minetest.register_craft({
 	type = "fuel",
 	recipe = "more_fuels:bucket_oil",
@@ -282,3 +284,11 @@ minetest.register_craftitem(":biofuel:fuel_can", {
 	description = "Bio Diesel",
 	inventory_image = "Deisel.png"
 })
+local function register_support(name, namestring)
+	if rawget(_G, namestring) and name.fuel then
+		name.fuel = {['biofuel:biofuel'] = 1,['biofuel:bottle_fuel'] = 1,['biofuel:phial_fuel'] = 0.25, ['biofuel:fuel_can'] = 10, ["more_fuels:gasoline"] = 10}
+	end
+end 
+local test = "a"
+if minetest.get_modpath("hidroplane") then test = "b" end
+dofile(minetest.get_modpath("more_fuels") .. DIR_DELIM .. "add_apercy_sup.lua")
