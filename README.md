@@ -1,15 +1,13 @@
+
 [![ContentDB](https://content.minetest.net/packages/pl608/more_fuels/shields/title/)](https://content.minetest.net/packages/pl608/more_fuels/)[![ContentDB](https://content.minetest.net/packages/pl608/more_fuels/shields/downloads/)](https://content.minetest.net/packages/pl608/more_fuels/)
 
 
 This mod adds a few new fuels for use in furnaces and such.
+the oil can(not the bucket) is only added when technic is though it isnt necessary, more for the realism
 ## Fuels Added
 * gasoline
 * oil/pertrolium
+* diesil
 ## WIP Fuels
-* diesel
 * propane
-## Ideas Added
-* petroleum is made to be like an ore with a scarcity similare to that of gold (I dont know if it works or not)
-## WIP Ideas
-* compatiblity with hidroplane, helecopter, motorboat and nautilis mods
-
+### compatiblity with hidroplane and motorboat and trike are done but helicopter and nautilis havent been done for some reason...
