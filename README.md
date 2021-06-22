@@ -10,4 +10,4 @@ the oil can(not the bucket) is only added when technic is though it isnt necessa
 * diesil
 ## WIP Fuels
 * propane
-### compatiblity with hidroplane and motorboat and trike are done but helicopter and nautilis havent been done for some reason...
+### compatiblity with hidroplane and motorboat and trike are done
