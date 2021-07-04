@@ -252,4 +252,4 @@ mestring) and name.fuel then
 end
 
 --run this thing
-dofile(minetest.get_modpath("more_fuels") .. DIR_DELIM .. "add_apercy_sup.lua") 
+dofile(minetest.get_modpath("more_fuels") .. DIR_DELIM .. "vehicles.lua") 
