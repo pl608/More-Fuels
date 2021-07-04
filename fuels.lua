@@ -222,6 +222,15 @@ minetest.register_node("more_fuels:propane", {
   groups = {cracky = 3},
 })
 --]]
+local has_elements = minetest.get_modpath("elements")
+--register hydrogen
+if has_elements then
+  minetest.register_craft({
+  	type = "fuel",
+  	recipe = "elements:hydrogen",
+	  burntime = 500,
+  })
+end
 
 --register gas
 minetest.register_node("more_fuels:gasoline_cans", {
