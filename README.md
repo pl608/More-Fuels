@@ -12,3 +12,6 @@ Note that compatibility with the Hidroplane, Motorboat, and Trike are complete.
 * diesil
 ### WIP Fuels
 * propane
+* methane
+* hydrogen
+* coke
