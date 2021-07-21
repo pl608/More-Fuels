@@ -15,3 +15,5 @@ Note that compatibility with the Hidroplane, Motorboat, and Trike are complete.
 * methane
 * hydrogen
 * coke
+* buetain(no I dont know how to spell it)
+
