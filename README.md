@@ -17,3 +17,5 @@ Note that compatibility with the Hidroplane, Motorboat, and Trike are complete.
 * coke
 * butane
 
+##### Code Inspectors:
+say thanks to Techdude, he was the one to organize this mod into multiple, easily readable/editable, files.(something of which I am incapable)
