@@ -45,6 +45,11 @@ function demoiselle()
 		demoiselle.fuel = {['biofuel:biofuel'] = 1,['biofuel:bottle_fuel'] = 1,['biofuel:phial_fuel'] = 0.25, ['biofuel:fuel_can'] = 5, ["more_fuels:gasoline"] = 10}
 	end
 end
+function airutils()
+	if rawget(_G, "airutils") and airutils.fuel then
+		airutils.fuel = {['biofuel:biofuel'] = 1,['biofuel:bottle_fuel'] = 1,['biofuel:phial_fuel'] = 0.25, ['biofuel:fuel_can'] = 5, ["more_fuels:gasoline"] = 10}
+	end
+end
 if minetest.get_modpath("hidroplane") then hydro() end
 if minetest.get_modpath("trike") then trike() end
 if minetest.get_modpath("motorboat") then boat() end
@@ -54,3 +59,4 @@ if minetest.get_modpath("ju52") then ju52() end
 if minetest.get_modpath("pa28") then pa28() end
 if minetest.get_modpath("pa28") then pa28() end
 if minetest.get_modpath("demoiselle") then demoiselle() end
+if minetest.get_modpath("airutils") then airutils() end
