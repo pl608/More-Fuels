@@ -101,7 +101,7 @@ minetest.register_craftitem("more_fuels:gasoline", {
 minetest.register_craftitem("more_fuels:butain",{
    description = "Butain Canister"
    inventory_image = "butain_fuel.png
-}
+})
 register_can({
 	can_name = "more_fuels:oil_can",
 	can_description = "Petrolium Can",
