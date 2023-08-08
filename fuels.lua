@@ -21,6 +21,7 @@ local function get_can_level(itemstack)
 		return tonumber(itemstack:get_metadata())
 	end
 end
+end
 --register the can API
 function register_can(d)
 	local data = {}
@@ -99,8 +100,8 @@ minetest.register_craftitem("more_fuels:gasoline", {
 })
 --register butaine
 minetest.register_craftitem("more_fuels:butain",{
-   description = "Butain Canister"
-   inventory_image = "butain_fuel.png
+   description = "Butain Canister",
+   inventory_image = "butain_fuel.png"
 })
 register_can({
 	can_name = "more_fuels:oil_can",
@@ -251,15 +252,14 @@ minetest.register_node("more_fuels:gasoline_cans", {
 })
   
 --register Bio Diesel
-minetest.register_craftitem("biofuel:fuel_can", {
+minetest.register_craftitem(":biofuel:fuel_can", {
 	description = "Bio Diesel",
 	inventory_image = "Deisel.png"
 })
 
 -- register the register support function ;)
 local function register_support(name, namestring)
-	if rawget(_G, na
-mestring) and name.fuel then
+	if rawget(_G, namestring) and name.fuel then
 		name.fuel = {['biofuel:biofuel'] = 1,['biofuel:bottle_fuel'] = 1,['biofuel:phial_fuel'] = 0.25, ['biofuel:fuel_can'] = 10, ["more_fuels:gasoline"] = 10}
 	end
 end
